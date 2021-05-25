@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width-device-width, initial-scale-1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+    <title>Mi calculdora en Spring Boot</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+    <script src="/js/jquery-3.5.0.min.js"></script>
+    <script src="/js/popper.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="jumbotron">
+        <h1 class="display-4">Calculadora simple</h1>
+        <p class="lead">
+        Ejemplo de calculadora usando MVC con Spring
+        </p>
+        <hr class="my-4">
+        <p>Introduce los datos solicitados.</p>
+        <div>
+          <form action="#" th:action="@{/resultado}" th:object="${calcu}" method="post">
+            <p>Primer número: <input type:"number" th:field="*{num1}" class="form-control"/></p>
+            <p>Segundo número: <input type:"number" th:field="*{num2}" class="form-control"/></p>
+            <p>
+              Operación:
+              <select th:field="*{operador}" class="form-control">
+                <option value="+">Suma ( + )</option>
+                <option value="-">Resta ( - )</option>
+                <option value="*">Multiplicación ( * )</option>
+                <option value="/">División ( / )</option>
+              </select>
+            </p>
+            <p>
+            <label th:text="'Resultado de ' + *{num1} + *{operador} + *{num2} + ' = ' + *{resultado}"></label>
+            <input type="submit" value="Calcular" /> <input type="reset" value="Reestablecer"/></p>
+          </form>
+        </div>
+        <hr class="my-4">
+        <div>
+          <div class="row">
+            <div class="col-2"></div>
+            <div class="col-8">
+              <p>Desarrollo Web Avanzado</p>
+              <p>A4.4 Calculadora con Spring Boot</p>
+              <p>Rafael López Arroyo</p>
+              <p>Fecha de entrega: 24 de mayo del 2021</p>
+            </div>
+          </div>
+          <div class="col-2"></div>
+        </div>
+        </div>
+      </div>
+    </div>
+</body>
+</html>
